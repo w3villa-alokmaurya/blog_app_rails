@@ -1,0 +1,28 @@
+<section class="container">
+    <ul class="flex ml-auto">
+        <a class="font-bold text-xl mr-4" href="/articles/create_article">Add Article</a>
+        <a class="font-bold text-xl " href="/categories/create_category">Add Category</a>
+    </ul>
+    <h1 class="font-bold text-xl">Latest Articles</h1>
+    <div class="flex">
+        <% @Article.each do |article| %>
+        <div class="max-w-sm mr-5 mt-5 bg-gray border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="/articles/<%= article.slug %>">
+                <img height="200px" class="rounded-t-lg" src=<%= url_for(article.featured_image) %>></a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><%= article.title.first(20)%></h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><%= article.body.first(200) %></p>
+                <a href="/articles/<%= article.slug %>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Read more
+                    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <% end %>
+        
+    </div>
+</section>

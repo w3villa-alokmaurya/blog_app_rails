@@ -1,0 +1,36 @@
+<section>
+    <%= form_with model: @Article, url: articles_create_article_path do |form|%>
+    <div class="mb-3">
+        <%= form.label :title%>
+        <%= form.text_field :title, class: "form-control", placeholder: "Title"%>
+    </div>
+    <div class="mb-3">
+        <%= form.label :body%>
+        <%= form.text_area :body, class: "tinymce", placeholder: "Write about...."%>
+    </div>
+    <div class="mb-3">
+        <%= form.label :user_id %>
+        <%= form.select :user_id, options_for_select(User.all.map { |c| [c.name, c.id] }), class: "form-control", placeholder: "User"%>
+    </div>
+    <div class="mb-3">
+        <%= form.label :tags%>
+        <%= form.text_field :tags, class: "form-control", placeholder: "Enter tags for seo"%>
+    </div>
+    <div class="mb-3">
+        <%= form.label :category_id%>
+        <%= form.select :category_id, options_for_select(Category.all.map { |c| [c.category_title, c.id] }), class: "form-control"%>
+    </div>
+    <div class="mb-3">
+        <%= form.label :isPublished %>
+        <%= form.check_box :isPublished , class: "form-control"%>
+    </div>
+    <div class="mb-3">
+        <%= form.label :featured_image %>
+        <%= form.file_field  :featured_image , class: "form-control"%>
+    </div>
+
+    <div class="mb-3">
+        <%= form.submit "Submit", class: " bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded btn btn-blue"%>
+    </div>
+    <% end %>
+</section>

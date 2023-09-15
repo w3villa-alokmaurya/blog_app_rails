@@ -1,0 +1,6 @@
+<div>
+    <b class="mb-2">Categories</b>
+    <% @Category.each do |category| %>
+   <h1><%= category.id %>: <%= category.category_title %> </h1> 
+   <% end %>
+</div>

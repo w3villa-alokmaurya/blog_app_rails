@@ -1,0 +1,11 @@
+<section>
+    <%= form_with model: @Category, url: categories_create_category_path do |form|%>
+    <div class="mb-3">
+        <%= form.label :category_title%>
+        <%= form.text_field :category_title, class: "form-control", placeholder: "Title"%>
+    </div>
+    <div class="mb-3">
+        <%= form.submit "Submit", class: " bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded btn btn-blue"%>
+    </div>
+    <% end %>
+</section>
