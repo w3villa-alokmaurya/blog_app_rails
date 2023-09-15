@@ -1,5 +1,4 @@
 <div>
     <h1><%= @Category.id %>: <%= @Category.category_title %> </h1> 
-   <p></p> <%= link_to "Delete", category, :confirm => "Are you sure", :method => :delete %> 
-
+    <%= link_to "Destroy", category_destroy_path(@Category), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 </div>

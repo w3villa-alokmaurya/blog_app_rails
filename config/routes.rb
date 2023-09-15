@@ -21,9 +21,9 @@ Rails.application.routes.draw do
   get "/category/:id", to: "category#show"
   put "/category/:id/edit", to: "category#update", as: "category_update"
   get "/category/:id/edit", to: "category#edit"
-  delete "/category/:id", to: "category#destroy"
+  delete "/category/:id", to: "category#destroy", as: "category_destroy"
 
-  # resources :category
+  # resources :category 
 
 
 

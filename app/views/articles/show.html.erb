@@ -1,10 +1,11 @@
 <div>
     <a href="<%=@Article.slug%>/edit">Edit Articles</a>
     <h1> <%= @Article.title %> </h1> 
+    <%= link_to "Destroy", articles_destroy_path(@Article), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 
     <img src="<%= url_for(@Article.featured_image) %>" alt="">
     <p><%= @Article.category_id %></p>
     <p><b><%= @Article.user_id %></b></p>
-    <p> <%= @Article.body %> </p>
+    <p><%= @Article.body.html_safe %> </p>
     <p><%= @Article.tags %></p>
 </div>

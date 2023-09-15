@@ -39,10 +39,8 @@ class ArticlesController < ApplicationController
 
     def destroy
         @Article = Article.find_by(id: params[:id])
-        @deleted = @Article.destroy()
-        if @deleted
+        @Article.destroy
             redirect_to "/articles"
-        end
     end
 
     def article_params

@@ -4,7 +4,7 @@ class CategoryController < ApplicationController
     end
 
     def show
-        @Category = Category.find_by(id: params[:id])
+        @Category = Category.find(params[:id])
         if !@Category
             redirect_to "/categories"
         else
@@ -35,7 +35,7 @@ class CategoryController < ApplicationController
 
 
     def destroy
-        @Category = Category.find(params[:id])
+        @Category = Category.find_by(id: params[:id])
         @Category.destroy
         redirect_to "/categories"
     end
